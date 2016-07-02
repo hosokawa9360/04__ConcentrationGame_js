@@ -1,7 +1,8 @@
 ## plugin の起動
 git-plus      :Ctrl-Shift-H  :git-plusのパネルを表示させる  
 Atom Beautify         :ctrl-alt-b　:　自動整形  
-atom-html-preview     :ctrl-shift-H : htmlﾌｧｲﾙをプレビューしてくれる  
+** atom-html-preview     :ctrl-shift-H : htmlﾌｧｲﾙをプレビューしてくれる  **  
+browser-plus : ctrl + alt + o   ブラウザの起動
 
 ##  atom keybindings
 Markdownのプレービュー表示 : control + shift + M  
@@ -9,12 +10,12 @@ Markdownのプレービュー表示 : control + shift + M
 単語を選択　:Ctrl + D　：※入力ごとに同じ単語を選択  
 単語の末尾に移動  :Alt + F  
 単語の先頭に移動  :Alt + B  
-行の末尾に移動	  : End
+行の末尾に移動	  : End （ノートＰＣはfn + → です）  
 矩形選択        :Ctrl + Alt + 上矢印キー or 下矢印キー  
 複数箇所選択    :	Ctrl + クリック  
 インデントを一つ追加　:Ctrl + ]　※複数行もOK  
 インデントを一つ削除　:Ctrl + [	※複数行もOK  
-行の選択	:Ctrl + L  
+** 行の選択	:Ctrl + L **  
 **行の削除	:Ctrl + Shift + K **  
 行ごと移動	：Ctrl + 上矢印キー or 下矢印キー  
 ** 行ごと下の行へコピー	：Ctrl + Shift + D **  
@@ -32,6 +33,7 @@ Markdownのプレービュー表示 : control + shift + M
 検索パネルを開く:ctrl+f
 次を検索：F3
 指定行に移動する：ctrl+g
+** ツリービューの表示・非表示：ctrl + ￥ **  
 
 
 
