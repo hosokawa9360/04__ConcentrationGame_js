@@ -3,7 +3,7 @@
 var gameScene = cc.Scene.extend({
     onEnter: function() {
         this._super();
-        var backgroundLayer = new cc.LayerColor(new cc.Color(140, 200, 140, 128));
+      //  var backgroundLayer = new cc.LayerColor(new cc.Color(140, 200, 140, 128));
         this.addChild(backgroundLayer);
 
         gameLayer = new game();
@@ -20,6 +20,10 @@ var game = cc.Layer.extend({
         tile.setPosition(size.width/2,size.height/2);　
         this.addChild(tile);
         */
+        //グラデーションを追加
+        var gradient = cc.LayerGradient.create(cc.color(0,0,0,255),cc.color(0x46,0x82,0xB4,255));
+        this.addChild(gradient);
+
         for(i=0;i<16;i++){
           var tile = cc.Sprite.create(res.cover_png);
           this.addChild(tile,0);
