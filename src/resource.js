@@ -1,13 +1,14 @@
 //resource.js
 var res = {
-    HelloWorld_png : "res/HelloWorld.png",
-    cocos_png : "res/cocos.png",
-    drop01_png : "res/drop01.png",
-    drop02_png : "res/drop02.png",
-    drop03_png : "res/drop03.png",
-    drop04_png : "res/drop04.png",
-    drop05_png : "res/drop05.png",
-    
+    cover_png : "res/cover.png",
+    tile_0_png : "res/tile_0.png",
+    tile_1_png : "res/tile_1.png",
+    tile_2_png : "res/tile_2.png",
+    tile_3_png : "res/tile_3.png",
+    tile_4_png : "res/tile_4.png",
+    tile_5_png : "res/tile_5.png",
+    tile_6_png : "res/tile_6.png",
+    tile_7_png : "res/tile_7.png",
 };
 
 var g_resources = [];

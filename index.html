@@ -4,8 +4,7 @@
     <title>Hello Cocos2d-JS</title>
     <script type="text/javascript" src="cocos2d-js-v3.11.js" charset="UTF-8"></script>
     <script type="text/javascript" src="src/resource.js" charset="UTF-8"></script>
-    <script type="text/javascript" src="src/myScene.js" charset="UTF-8"></script>
-    <script type="text/javascript" src="src/nextScene.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="src/app.js" charset="UTF-8"></script>
 </head>
 <body>
     <canvas id="gameCanvas" ></canvas>
@@ -20,9 +19,9 @@
                   cc.view.setDesignResolutionSize(320, 480, cc.ResolutionPolicy.SHOW_ALL);
                   // 表示領域がリサイズされた場合、自動的にプログラムの画面をリサイズさせる
                   cc.view.resizeWithBrowserSize(true);
-                  
+
                   cc.LoaderScene.preload(g_resources, function () {
-                      cc.director.runScene(new MyScene());
+                       cc.director.runScene(new gameScene());
                   }, this);
               };
               cc.game.run("gameCanvas");

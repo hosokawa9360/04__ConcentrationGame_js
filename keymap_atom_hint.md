@@ -1,3 +1,8 @@
+## plugin の起動
+git-plus      :Ctrl-Shift-H  :git-plusのパネルを表示させる  
+Atom Beautify         :ctrl-alt-b　:　自動整形  
+atom-html-preview     :ctrl-shift-H : htmlﾌｧｲﾙをプレビューしてくれる  
+
 ##  atom keybindings
 Markdownのプレービュー表示 : control + shift + M  
 コメントアウト	：Ct：rl + /  
@@ -29,10 +34,6 @@ Markdownのプレービュー表示 : control + shift + M
 指定行に移動する：ctrl+g
 
 
-## plugin の起動
-git-plus      :Ctrl-Shift-H  :git-plusのパネルを表示させる  
-Atom Beautify         :ctrl-alt-b　:　自動整形  
-atom-html-preview     :ctrl-shift-H : htmlﾌｧｲﾙをプレビューしてくれる  
 
 ## git-plus Command
  :Ctrl-Shift-H  :git-plusのパネルを表示させる  
