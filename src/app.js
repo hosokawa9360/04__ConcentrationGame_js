@@ -9,8 +9,9 @@ var gameScene = cc.Scene.extend({
         this.addChild(gameLayer);
     }
 });
-
+//外部変数
 var console_label;
+var gameArray = [0,0,1,1,2,2,3,3,4,4,5,5,6,6,7,7];
 var game = cc.Layer.extend({
     ctor: function() {
         this._super();
@@ -21,6 +22,8 @@ var game = cc.Layer.extend({
         for (i = 0; i < 16; i++) {
             //var tile = cc.Sprite.create(res.cover_png);
             var tile = new MemoryTile();
+            //pictureValueというプロパティを定義して、値を入れている
+            tile.pictureValue = gameArray[i];
             this.addChild(tile, 0);
             //タイルを格子状に配置する計算式
             tile.setPosition(49 + i % 4 * 74, 400 - Math.floor(i / 4) * 74);
@@ -56,11 +59,13 @@ var listener = cc.EventListener.create({
 
       if (cc.rectContainsPoint(targetRectangle, location)) {
           console.log("I piced a tile!!");
-          console_label.setString("I piced a tile!!");
+          console_label.setString("pictueValue:"+target.pictureValue);
           // 一秒後に消える
        setTimeout(function() {
            console_label.setString("");
        }, 1500);
+       //別の画像を割り当てる処理
+       target.initWithFile("res/tile_"+target.pictureValue+".png");
 
       }
     }
