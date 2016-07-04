@@ -106,3 +106,55 @@ gameレイヤの中で次のように定義しても、関数を跨いで利用�
 
 - 別の画像を割り当てる処理  
 target.initWithFile("res/tile_"+target.pictureValue+".png");
+
+
+## ○２つのタイルを選択し、一致したらカードを削除する処理
+
+var gameArray = [0,0,1,1,2,2,3,3,4,4,5,5,6,6,7,7];  
+  **  var pickedTiles = []; **  
+  選択されたカードを一時保管する配列です  
+
+swallowTouches: true,  
+onTouchBegan: function (touch, event) {  
+**  if (pickedTiles.length < 2) {  **
+  //選択されたカードが２枚以内ならば
+    var target = event.getCurrentTarget();  
+    var location =  target.convertToNodeSpace(touch.getLocation());  
+    var targetSize = target.getContentSize();  
+    var targetRectangle = cc.rect(0, 0, targetSize.width, targetSize.height);  
+    if (cc.rectContainsPoint(targetRectangle, location)) {
+        console.log("I piced a tile!!");  
+        console_label.setString("pictueValue:"+target.pictureValue);  
+        // 一秒後に消える  
+     setTimeout(function() {  
+         console_label.setString("");  
+     }, 1500);  
+     //別の画像を割り当てる処理  
+     target.initWithFile("res/tile_"+target.pictureValue+".png");  
+     // 配列に登録  
+     ** pickedTiles.push(target); **
+//2枚のカードを選択したら　checkTilesを実行する
+    ** if(pickedTiles.length == 2){ **  
+    **   checkTiles();  **
+     }   
+    }  
+### ○　checkＴiles  
+
+function checkTiles() {  
+  cc.log("checkTiles");  
+  setTimeout(function() {  
+      if(pickedTiles[0].pictureValue != pickedTiles[1].pictureValue){  
+        pickedTiles[0].initWithFile(res.cover_png);  
+        pickedTiles[1].initWithFile(res.cover_png);  
+      }  
+      else {  
+        gameLayer.removeChild(pickedTiles[0]);  
+        gameLayer.removeChild(pickedTiles[1]);  
+      }  
+      pickedTiles = [];  
+  }, 1000);  
+}  
+  1. プレイヤーがタイルを記憶する時間を与えるため　checkTiles関数は２秒待機する  
+  2. 一致しない場合、再びタイルを背景画像に変更することでタイルを裏返す  
+  3. ゲームから選択したカードを removeChildメソッドを用いて削除する
+  4. どちらの場合にも　pickedTiles配列を空にして、プレイヤーが新しいタイルを選択できるようにする
