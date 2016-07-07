@@ -26,7 +26,7 @@ var gameScene = cc.Scene.extend({
 var game = cc.Layer.extend({
     init:function () {
         this._super();
-        var gradient = cc.LayerGradient.create(cc.color(0,0,0,255), cc.color(0x46,0x82,0xB4,255));
+        var gradient = cc.LayerGradient.create(cc.color(0,0,255,255), cc.color(0x46,0x82,0xB4,255));
         this.addChild(gradient);
         scoreText = cc.LabelTTF.create("Moves: 0","Arial","32",cc.TEXT_ALIGNMENT_CENTER);
         this.addChild(scoreText);
